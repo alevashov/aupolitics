@@ -18,7 +18,8 @@ download.file(url = "http://curl.haxx.se/ca/cacert.pem",
 #               'YOUR API SECRET', # api secret
 #               'YOU API ACCESS TOKEN', # access token
 #               'YOUR API SECRET TOKEN') # access token secret)
-source("api_key.r")
+# 
+source("api_key.r") #local file, not in global repo for security reasons
 setup_twitter_oauth(apikeys[1], apikeys[2],apikeys[3], apikeys[4])
 
 labor <- mp2 %>% filter(party=="Australian Labor Party")
