@@ -1,0 +1,6 @@
+.httr-oauth
+cacert.pem
+.RData
+.Rhistory
+.Rproj.user
+api_key.r
