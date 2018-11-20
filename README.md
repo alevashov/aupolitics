@@ -1,2 +1,0 @@
-# aupolitics
-Australian politics research
