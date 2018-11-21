@@ -8,6 +8,9 @@ mp2 <- mps %>% filter(twitter!="NA" & party %in% majors) %>% group_by(party)
 
 # check number of accounts
 mp2 %>% summarise(n = n())
+tonly <- t(as.character(mp2$twitter))
+
+write.csv(tonly, "th-only.csv", col.names = FALSE, row.names = FALSE, sep = ",")
 
 library(twitteR)
 download.file(url = "http://curl.haxx.se/ca/cacert.pem",

@@ -1,5 +1,5 @@
 ### scapping data about Australian Members of Parlament, from official website
-
+install.packages("RSelenium")
 library(RSelenium)
 
 # datarframe for results
@@ -51,93 +51,55 @@ onempdata <- function (webElems, ref) {
 }
 
 
+
+
+
+collectPartyData <- function (url, party){
+        remDr$navigate(url)
+        # empty dataframe to collect one party data
+        fmps <- data.frame(matrix(ncol = 4, nrow = 0))
+        colnames(fmps)<- c('name', 'electorate', 'party', 'twitter')
+        webElems1 <- remDr$findElements(using = 'xpath', value = '//*[contains(concat( " ", @class, " " ), concat( " ", "padding-top", " " ))]')
+        for (i in seq_along(webElems1)){
+                one <- data.frame(matrix(ncol = 4, nrow = 1))
+                colnames(one)<- c('name', 'electorate', 'party', 'twitter')
+                one <- onempdata(webElems1, i)
+                one$party <- party
+                fmps <- rbind(fmps, one)
+        }
+        return (fmps)
+}
 ## run with Labour MPS
 
-remDr$navigate("https://www.aph.gov.au/Senators_and_Members/Parliamentarian_Search_Results?q=&mem=1&par=1&gen=0&ps=96")
-webElems1 <- remDr$findElements(using = 'xpath', value = '//*[contains(concat( " ", @class, " " ), concat( " ", "padding-top", " " ))]')
-
-for (i in seq_along(webElems1)){
-        one <- data.frame(matrix(ncol = 4, nrow = 1))
-        colnames(one)<- c('name', 'electorate', 'party', 'twitter')
-        one <- onempdata(webElems1, i)
-        one$party <- "Australian Labor Party"
-        mps <- rbind(mps, one)
-}
+url <- "https://www.aph.gov.au/Senators_and_Members/Parliamentarian_Search_Results?q=&mem=1&par=1&gen=0&ps=96"
+mps <- rbind(mps,collectPartyData(url, "Australian Labor Party"))        
 
 ## run with Liberal MPS
-remDr$navigate("https://www.aph.gov.au/Senators_and_Members/Parliamentarian_Search_Results?q=&mem=1&par=2&gen=0&ps=96")
-webElems1 <- remDr$findElements(using = 'xpath', value = '//*[contains(concat( " ", @class, " " ), concat( " ", "padding-top", " " ))]')
-
-for (i in seq_along(webElems1)){
-        one <- data.frame(matrix(ncol = 4, nrow = 1))
-        colnames(one)<- c('name', 'electorate', 'party', 'twitter')
-        one <- onempdata(webElems1, i)
-        one$party <- "Liberal Party of Australia"
-        mps <- rbind(mps, one)
-}
-
+url <- "https://www.aph.gov.au/Senators_and_Members/Parliamentarian_Search_Results?q=&mem=1&par=2&gen=0&ps=96"
+mps <- rbind(mps,collectPartyData(url, "Liberal Party of Australia"))        
+  
 ## run with Nationals
-remDr$navigate("https://www.aph.gov.au/Senators_and_Members/Parliamentarian_Search_Results?q=&mem=1&par=3&gen=0&ps=96")
-webElems1 <- remDr$findElements(using = 'xpath', value = '//*[contains(concat( " ", @class, " " ), concat( " ", "padding-top", " " ))]')
-
-for (i in seq_along(webElems1)){
-        one <- data.frame(matrix(ncol = 4, nrow = 1))
-        colnames(one)<- c('name', 'electorate', 'party', 'twitter')
-        one <- onempdata(webElems1, i)
-        one$party <- "The Nationals"
-        mps <- rbind(mps, one)
-}
+url <- "https://www.aph.gov.au/Senators_and_Members/Parliamentarian_Search_Results?q=&mem=1&par=3&gen=0&ps=96"
+mps <- rbind(mps,collectPartyData(url, "The Nationals"))        
 
 ## run with Greens
-remDr$navigate("https://www.aph.gov.au/Senators_and_Members/Parliamentarian_Search_Results?q=&mem=1&par=9&gen=0&ps=96")
-webElems1 <- remDr$findElements(using = 'xpath', value = '//*[contains(concat( " ", @class, " " ), concat( " ", "padding-top", " " ))]')
-
-for (i in seq_along(webElems1)){
-        one <- data.frame(matrix(ncol = 4, nrow = 1))
-        colnames(one)<- c('name', 'electorate', 'party', 'twitter')
-        one <- onempdata(webElems1, i)
-        one$party <- "Australian Greens"
-        mps <- rbind(mps, one)
-}
-
+url <- "https://www.aph.gov.au/Senators_and_Members/Parliamentarian_Search_Results?q=&mem=1&par=9&gen=0&ps=96"
+mps <- rbind(mps,collectPartyData(url, "Australian Greens"))        
+ 
 ## run with independent
-remDr$navigate("https://www.aph.gov.au/Senators_and_Members/Parliamentarian_Search_Results?q=&mem=1&par=4&gen=0&ps=96")
-webElems1 <- remDr$findElements(using = 'xpath', value = '//*[contains(concat( " ", @class, " " ), concat( " ", "padding-top", " " ))]')
+url <- "https://www.aph.gov.au/Senators_and_Members/Parliamentarian_Search_Results?q=&mem=1&par=4&gen=0&ps=96"
+mps <- rbind(mps,collectPartyData(url, "Independent"))    
 
-for (i in seq_along(webElems1)){
-        one <- data.frame(matrix(ncol = 4, nrow = 1))
-        colnames(one)<- c('name', 'electorate', 'party', 'twitter')
-        one <- onempdata(webElems1, i)
-        one$party <- "Independent"
-        mps <- rbind(mps, one)
-}
+## run with Centre Alliance
 
-## run with Cenre Alliance
-
-remDr$navigate("https://www.aph.gov.au/Senators_and_Members/Parliamentarian_Search_Results?q=&mem=1&par=25&gen=0&ps=96")
-webElems1 <- remDr$findElements(using = 'xpath', value = '//*[contains(concat( " ", @class, " " ), concat( " ", "padding-top", " " ))]')
-
-for (i in seq_along(webElems1)){
-        one <- data.frame(matrix(ncol = 4, nrow = 1))
-        colnames(one)<- c('name', 'electorate', 'party', 'twitter')
-        one <- onempdata(webElems1, i)
-        one$party <- "Centre Alliance"
-        mps <- rbind(mps, one)
-}
-
+url <- "https://www.aph.gov.au/Senators_and_Members/Parliamentarian_Search_Results?q=&mem=1&par=25&gen=0&ps=96"
+mps <- rbind(mps,collectPartyData(url, "Centre Alliance"))    
 
 ### run with Katter party
 
-remDr$navigate("https://www.aph.gov.au/Senators_and_Members/Parliamentarian_Search_Results?q=&mem=1&par=15&gen=0&ps=96")
-webElems1 <- remDr$findElements(using = 'xpath', value = '//*[contains(concat( " ", @class, " " ), concat( " ", "padding-top", " " ))]')
+url <- "https://www.aph.gov.au/Senators_and_Members/Parliamentarian_Search_Results?q=&mem=1&par=15&gen=0&ps=96"
+mps <- rbind(mps,collectPartyData(url, "Katter's Australian Party"))    
 
-for (i in seq_along(webElems1)){
-        one <- data.frame(matrix(ncol = 4, nrow = 1))
-        colnames(one)<- c('name', 'electorate', 'party', 'twitter')
-        one <- onempdata(webElems1, i)
-        one$party <- "Katter's Australian Party"
-        mps <- rbind(mps, one)
-}
 ### closing webdriver session
 remDr$close()
 
