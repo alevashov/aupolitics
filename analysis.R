@@ -1,8 +1,5 @@
-# text analysis
-
-
+# Analysis part. Start from loading required packages
 require(stringr)
-require(purrr)
 require(dplyr)
 require(tm)
 require(wordcloud)
@@ -27,14 +24,13 @@ corp <- function (text) {
         text_df <- sapply(text_df$text,function(row) iconv(row, "latin1", "ASCII", sub=""))
         #corpus is a collection of text documents
         t_corpus <- Corpus(VectorSource(text_df))
-        #clean text
+        #clean text and stemming
         t_clean <- tm_map(t_corpus, removePunctuation)
         t_clean <- tm_map(t_clean, content_transformer(tolower))
         t_clean <- tm_map(t_clean, removeWords, stopwords("english"))
         t_clean <- tm_map(t_clean, removeNumbers)
         t_clean <- tm_map(t_clean, stripWhitespace)
         t_clean <- tm_index(t_clean, stemDocument)
-        ## t_clean <- tm_map(t_clean, removeWords, c("new","today", "will"))#removing some words with low sense manually
         return(t_clean)        
 }
 #wordcloud function
@@ -45,13 +41,10 @@ mywordcloud <- function (corp) {
 # gettiin corpus for each party
 
 lab_corp <- gettext(unlist(tweets_lab)) %>% corp()
-
 lib_corp <- gettext(unlist(tweets_lib)) %>% corp()
-
 nat_corp <- gettext(unlist(tweets_nat)) %>% corp()
+
 # building wordclouds for parties
-
-
 #setting parameters
 layout(matrix(c(1, 2), nrow=2), heights=c(1, 4))
 par(mar=rep(0, 4))
@@ -67,10 +60,6 @@ lib_wc <- lib_corp %>% mywordcloud()
 plot.new()
 text(x=0.5, y=0.5, "Nationals")
 nat_wc <- nat_corp %>% mywordcloud()
-
-### more analysis
-findFreqTerms(my.tdm, 10)
-findAssocs(my.tdm, 'amp', 0.20)
 
 ## Reducing dimensions - one document per party
 
@@ -93,16 +82,16 @@ atm <- full_join(atm_nats, atm_libs, by = 'word') %>% full_join(atm_labs,by = 'w
 # formatting for further use
 row.names(atm)<-atm$word
 atm <- atm[c(1,3,4)]
-
 atm <- as.matrix(atm)
 atm[is.na(atm)] <- 0
 # compare 
-# reset layout
-
+# reset layout 
+layout(matrix(c(1, 1), nrow=1))
+# Comparison Cloud, words that are party specific
 comparison.cloud(atm,max.words=80,scale=c(3,.2), random.order=FALSE, colors=brewer.pal(max(3,ncol(atm)),"Dark2"),
                  use.r.layout=FALSE, title.size=3,
                  title.colors=NULL, match.colors=FALSE,
                  title.bg.colors="grey90")
-
+# Commonality Cloud - similar words used by all parties
 commonality.cloud(atm, max.words=80,random.order=FALSE)       
 
