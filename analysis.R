@@ -5,6 +5,10 @@ require(tm)
 require(wordcloud)
 require(SnowballC)
 
+# load data - tweets we collected
+
+load("tweets.Rdata")
+
 ## get only text from list with tweets
 gettext<- function (mylist) {
         text <- character()
@@ -46,21 +50,26 @@ nat_corp <- gettext(unlist(tweets_nat)) %>% corp()
 
 # building wordclouds for parties
 #setting parameters
-layout(matrix(c(1, 2), nrow=2), heights=c(1, 4))
+layout(matrix(c(1, 2), nrow=2), heights=c(0.25, 4))
 par(mar=rep(0, 4))
 # Labor
 plot.new()
 text(x=0.5, y=0.5, "Labor")
 lab_wc <- lab_corp %>% mywordcloud()
+dev.copy(png,"labor.png",width=8,height=6,units="in",res=100)
+dev.off()
 #Libs
 plot.new()
 text(x=0.5, y=0.5, "Liberals")
 lib_wc <- lib_corp %>% mywordcloud()
+dev.copy(png,"liberals.png",width=8,height=6,units="in",res=100)
+dev.off()
 # Nationals
 plot.new()
 text(x=0.5, y=0.5, "Nationals")
 nat_wc <- nat_corp %>% mywordcloud()
-
+dev.copy(png,"nationals.png",width=8,height=6,units="in",res=100)
+dev.off()
 ## Reducing dimensions - one document per party
 
 # defining function
@@ -85,13 +94,20 @@ atm <- atm[c(1,3,4)]
 atm <- as.matrix(atm)
 atm[is.na(atm)] <- 0
 # compare 
-# reset layout 
-layout(matrix(c(1, 1), nrow=1))
+
 # Comparison Cloud, words that are party specific
+plot.new()
+text(x=0.5, y=0.5, "Comparison Cloud")
 comparison.cloud(atm,max.words=80,scale=c(3,.2), random.order=FALSE, colors=brewer.pal(max(3,ncol(atm)),"Dark2"),
                  use.r.layout=FALSE, title.size=3,
                  title.colors=NULL, match.colors=FALSE,
                  title.bg.colors="grey90")
+dev.copy(png,"comparisoncloud.png",width=8,height=6,units="in",res=100)
+dev.off()
 # Commonality Cloud - similar words used by all parties
+plot.new()
+text(x=0.5, y=0.5, "Commonality Cloud")
 commonality.cloud(atm, max.words=80,random.order=FALSE)       
+dev.copy(png,"commonalitycloud.png",width=8,height=6,units="in",res=100)
+dev.off()
 

@@ -41,3 +41,4 @@ tweets_lab<- map(labor$twitter, ~tsearch(.x, n=200))
 tweets_lib<- map(libs$twitter, ~tsearch(.x, n=200))
 
 ## we need the last 3 objetcs in analysis script
+save(tweets_nat, tweets_lab, tweets_lib, file = "tweets.RData")
