@@ -1,5 +1,6 @@
 library(dplyr)
 library(purrr)
+library(twitteR)
 mps <- read.csv('mps.csv')
 
 # filter out MPS without twitters and smaller parties
@@ -13,7 +14,7 @@ mp2 %>% summarise(n = n())
 tonly <- t(as.character(mp2$twitter))
 write.csv(tonly, "th-only.csv", col.names = FALSE, row.names = FALSE, sep = ",")
 
-library(twitteR)
+
 download.file(url = "http://curl.haxx.se/ca/cacert.pem",
               destfile = "cacert.pem")
 
@@ -25,7 +26,6 @@ download.file(url = "http://curl.haxx.se/ca/cacert.pem",
 # 
 source("api_key.r") #local file, not in global repo for security reasons
 setup_twitter_oauth(apikeys[1], apikeys[2],apikeys[3], apikeys[4])
-
 labor <- mp2 %>% filter(party=="Australian Labor Party")
 libs <- mp2 %>% filter(party=="Liberal Party of Australia")
 nationals <- mp2 %>% filter(party=="The Nationals")
@@ -42,3 +42,4 @@ tweets_lib<- map(libs$twitter, ~tsearch(.x, n=200))
 
 ## we need the last 3 objetcs in analysis script
 save(tweets_nat, tweets_lab, tweets_lib, file = "tweets.RData")
+

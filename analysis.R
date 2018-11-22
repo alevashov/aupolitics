@@ -1,6 +1,6 @@
 # Analysis part. Start from loading required packages
-require(stringr)
 require(dplyr)
+require(stringr)
 require(tm)
 require(wordcloud)
 require(SnowballC)
@@ -37,16 +37,19 @@ corp <- function (text) {
         t_clean <- tm_index(t_clean, stemDocument)
         return(t_clean)        
 }
-#wordcloud function
-mywordcloud <- function (corp) {
-        wc <-wordcloud(corp, random.order=F,max.words=80, col=rainbow(80), scale=c(3,0.2))        
-        return(wc)
-}
+
 # gettiin corpus for each party
 
 lab_corp <- gettext(unlist(tweets_lab)) %>% corp()
 lib_corp <- gettext(unlist(tweets_lib)) %>% corp()
 nat_corp <- gettext(unlist(tweets_nat)) %>% corp()
+
+#wordcloud function
+mywordcloud <- function (corp) {
+        wc <-wordcloud(corp, random.order=F,max.words=80, col=rainbow(80), scale=c(3,0.2))        
+        return(wc)
+}
+
 
 # building wordclouds for parties
 #setting parameters
@@ -93,6 +96,8 @@ row.names(atm)<-atm$word
 atm <- atm[c(1,3,4)]
 atm <- as.matrix(atm)
 atm[is.na(atm)] <- 0
+# save in file 
+write.csv(atm, 'word-party-freq-matrix.csv')
 # compare 
 
 # Comparison Cloud, words that are party specific
