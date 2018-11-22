@@ -8,4 +8,4 @@ Reference to blog post with more detailed explanation of the approach - https://
 2. tweets-collection.R - collecting tweets from MPs
 3. analysis.R - analysis of data
 
-Note that analysis.R at the moment uses objects from R memory, so has to be run in the same session with tweet-collection.R
+
