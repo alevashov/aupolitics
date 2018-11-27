@@ -1,151 +1,99 @@
-"","name","electorate","party","twitter"
-"1","Hon Anthony Albanese MP","Grayndler, New South Wales","Australian Labor Party","AlboMP"
-"2","Dr Anne Aly MP","Cowan, Western Australia","Australian Labor Party",NA
-"3","Hon Sharon Bird MP","Cunningham, New South Wales","Australian Labor Party","SharonBirdMP"
-"4","Hon Chris Bowen MP","McMahon, New South Wales","Australian Labor Party","Bowenchris"
-"5","Ms Gai Brodtmann MP","Canberra, Australian Capital Territory","Australian Labor Party",NA
-"6","Hon Tony Burke MP","Watson, New South Wales","Australian Labor Party","tony_burke"
-"7","Hon Linda Burney MP","Barton, New South Wales","Australian Labor Party","lindaburneymp"
-"8","Hon Mark Butler MP","Port Adelaide, South Australia","Australian Labor Party","Mark_Butler_MP"
-"9","Ms Terri Butler MP","Griffith, Queensland","Australian Labor Party","terrimbutler"
-"10","Hon Anthony Byrne MP","Holt, Victoria","Australian Labor Party","AnthonyByrne_MP"
-"11","Dr Jim Chalmers MP","Rankin, Queensland","Australian Labor Party","JEChalmers"
-"12","Mr Nick Champion MP","Wakefield, South Australia","Australian Labor Party","NickChampionMP"
-"13","Ms Lisa Chesters MP","Bendigo, Victoria","Australian Labor Party","LMChesters"
-"14","Hon Jason Clare MP","Blaxland, New South Wales","Australian Labor Party","JasonClareMP"
-"15","Ms Sharon Claydon MP","Newcastle, New South Wales","Australian Labor Party","SharonClaydon"
-"16","Hon Julie Collins MP","Franklin, Tasmania","Australian Labor Party","JulieCollinsMP"
-"17","Mr Pat Conroy MP","Shortland, New South Wales","Australian Labor Party",NA
-"18","Hon Michael Danby MP","Melbourne Ports, Victoria","Australian Labor Party",NA
-"19","Mr Milton Dick MP","Oxley, Queensland","Australian Labor Party",NA
-"20","Hon Mark Dreyfus QC, MP","Isaacs, Victoria","Australian Labor Party",NA
-"21","Hon Justine Elliot MP","Richmond, New South Wales","Australian Labor Party",NA
-"22","Hon Kate Ellis MP","Adelaide, South Australia","Australian Labor Party","KateEllisMP"
-"23","Hon Joel Fitzgibbon MP","Hunter, New South Wales","Australian Labor Party","fitzhunter"
-"24","Dr Mike Freelander MP","Macarthur, New South Wales","Australian Labor Party",NA
-"25","Mr Steve Georganas MP","Hindmarsh, South Australia","Australian Labor Party","stevegeorganas"
-"26","Mr Andrew Giles MP","Scullin, Victoria","Australian Labor Party","andrewjgiles"
-"27","Mr Patrick Gorman MP","Perth, Western Australia","Australian Labor Party",NA
-"28","Mr Luke Gosling OAM, MP","Solomon, Northern Territory","Australian Labor Party","lukejgosling"
-"29","Mr Ross Hart MP","Bass, Tasmania","Australian Labor Party","RossHartMP"
-"30","Mr Chris Hayes MP","Fowler, New South Wales","Australian Labor Party",NA
-"31","Mr Julian Hill MP","Bruce, Victoria","Australian Labor Party","JulianHillMP"
-"32","Ms Emma Husar MP","Lindsay, New South Wales","Australian Labor Party",NA
-"33","Hon Ed Husic MP","Chifley, New South Wales","Australian Labor Party",NA
-"34","Mr Stephen Jones MP","Whitlam, New South Wales","Australian Labor Party","stephenjonesalp"
-"35","Ms Ged Kearney MP","Batman, Victoria","Australian Labor Party","gedkearney"
-"36","Ms Justine Keay MP","Braddon, Tasmania","Australian Labor Party",NA
-"37","Hon Dr Mike Kelly AM, MP","Eden-Monaro, New South Wales","Australian Labor Party","MikeKellyofEM"
-"38","Mr Matt Keogh MP","Burt, Western Australia","Australian Labor Party","mattkeogh"
-"39","Mr Peter Khalil MP","Wills, Victoria","Australian Labor Party","PeterKhalilMP"
-"40","Hon Catherine King MP","Ballarat, Victoria","Australian Labor Party","CatherineKingMP"
-"41","Ms Madeleine King MP","Brand, Western Australia","Australian Labor Party","MadeleineMHKing"
-"42","Ms Susan Lamb MP","Longman, Queensland","Australian Labor Party",NA
-"43","Hon Dr Andrew Leigh MP","Fenner, Australian Capital Territory","Australian Labor Party","ALEIGHMP"
-"44","Hon Jenny Macklin MP","Jagajaga, Victoria","Australian Labor Party",NA
-"45","Hon Richard Marles MP","Corio, Victoria","Australian Labor Party","RichardMarlesMP"
-"46","Ms Emma McBride MP","Dobell, New South Wales","Australian Labor Party",NA
-"47","Mr Brian Mitchell MP","Lyons, Tasmania","Australian Labor Party","brianmitchellmp"
-"48","Mr Rob Mitchell MP","McEwen, Victoria","Australian Labor Party","RobMitchellMP"
-"49","Hon Shayne Neumann MP","Blair, Queensland","Australian Labor Party","ShayneNeumannMP"
-"50","Hon Brendan O'Connor MP","Gorton, Victoria","Australian Labor Party",NA
-"51","Ms Clare O'Neil MP","Hotham, Victoria","Australian Labor Party","ClareONeilMP"
-"52","Ms Cathy O'Toole MP","Herbert, Queensland","Australian Labor Party",NA
-"53","Ms Julie Owens MP","Parramatta, New South Wales","Australian Labor Party","JulieOwensMP"
-"54","Mr Graham Perrett MP","Moreton, Queensland","Australian Labor Party","GrahamPerrettMP"
-"55","Hon Tanya Plibersek MP","Sydney, New South Wales","Australian Labor Party","tanya_plibersek"
-"56","Hon Amanda Rishworth MP","Kingston, South Australia","Australian Labor Party","AmandaRishworth"
-"57","Ms Michelle Rowland MP","Greenway, New South Wales","Australian Labor Party","MRowlandMP"
-"58","Ms Joanne Ryan MP","Lalor, Victoria","Australian Labor Party","JoanneRyanLalor"
-"59","Hon Bill Shorten MP","Maribyrnong, Victoria","Australian Labor Party","billshortenmp"
-"60","Hon Warren Snowdon MP","Lingiari, Northern Territory","Australian Labor Party",NA
-"61","Ms Anne Stanley MP","Werriwa, New South Wales","Australian Labor Party","annewerriwa"
-"62","Hon Wayne Swan MP","Lilley, Queensland","Australian Labor Party","SwannyQLD"
-"63","Ms Meryl Swanson MP","Paterson, New South Wales","Australian Labor Party",NA
-"64","Ms Susan Templeman MP","Macquarie, New South Wales","Australian Labor Party","stemplemanmp"
-"65","Hon Matt Thistlethwaite MP","Kingsford Smith, New South Wales","Australian Labor Party","MThistlethwaite"
-"66","Ms Maria Vamvakinou MP","Calwell, Victoria","Australian Labor Party","MariaVamvakinou"
-"67","Mr Tim Watts MP","Gellibrand, Victoria","Australian Labor Party","TimWattsMP"
-"68","Mr Josh Wilson MP","Fremantle, Western Australia","Australian Labor Party","joshwilsonmp"
-"69","Mr Tony Zappia MP","Makin, South Australia","Australian Labor Party",NA
-"70","Hon Tony Abbott MP","Warringah, New South Wales","Liberal Party of Australia","TonyAbbottMHR"
-"71","Mr John Alexander OAM, MP","Bennelong, New South Wales","Liberal Party of Australia","JohnAlexanderMP"
-"72","Hon Karen Andrews MP","McPherson, Queensland","Liberal Party of Australia","karenandrewsmp"
-"73","Hon Kevin Andrews MP","Menzies, Victoria","Liberal Party of Australia","kevinandrewsmp"
-"74","Ms Julia Banks MP","Chisholm, Victoria","Liberal Party of Australia",NA
-"75","Hon Julie Bishop MP","Curtin, Western Australia","Liberal Party of Australia","JulieBishopMP"
-"76","Mr Russell Broadbent MP","McMillan, Victoria","Liberal Party of Australia",NA
-"77","Hon Scott Buchholz MP","Wright, Queensland","Liberal Party of Australia","ScottBuchholzMP"
-"78","Hon Steven Ciobo MP","Moncrieff, Queensland","Liberal Party of Australia","stevenciobo"
-"79","Hon David Coleman MP","Banks, New South Wales","Liberal Party of Australia",NA
-"80","Mr Chris Crewther MP","Dunkley, Victoria","Liberal Party of Australia",NA
-"81","Hon Peter Dutton MP","Dickson, Queensland","Liberal Party of Australia","PeterDutton_MP"
-"82","Hon Warren Entsch MP","Leichhardt, Queensland","Liberal Party of Australia",NA
-"83","Mr Trevor Evans MP","Brisbane, Queensland","Liberal Party of Australia",NA
-"84","Mr Jason Falinski MP","Mackellar, New South Wales","Liberal Party of Australia","jasonfalinskiMP"
-"85","Hon Paul Fletcher MP","Bradfield, New South Wales","Liberal Party of Australia","PaulFletcherMP"
-"86","Ms Nicolle Flint MP","Boothby, South Australia","Liberal Party of Australia","nicolleflint"
-"87","Hon Josh Frydenberg MP","Kooyong, Victoria","Liberal Party of Australia","JoshFrydenberg"
-"88","Mr Ian Goodenough MP","Moore, Western Australia","Liberal Party of Australia",NA
-"89","Mr Andrew Hastie MP","Canning, Western Australia","Liberal Party of Australia",NA
-"90","Hon Alex Hawke MP","Mitchell, New South Wales","Liberal Party of Australia","alexhawkemp"
-"91","Hon Sarah Henderson MP","Corangamite, Victoria","Liberal Party of Australia","SHendersonMP"
-"92","Mr Luke Howarth MP","Petrie, Queensland","Liberal Party of Australia",NA
-"93","Hon Greg Hunt MP","Flinders, Victoria","Liberal Party of Australia","greghuntmp"
-"94","Hon Steve Irons MP","Swan, Western Australia","Liberal Party of Australia","SteveIronsMP"
-"95","Hon Michael Keenan MP","Stirling, Western Australia","Liberal Party of Australia",NA
-"96","Mr Craig Kelly MP","Hughes, New South Wales","Liberal Party of Australia","CraigKellyMP"
-"97","Mr Andrew Laming MP","Bowman, Queensland","Liberal Party of Australia","AndrewLamingMP"
-"98","Hon Craig Laundy MP","Reid, New South Wales","Liberal Party of Australia",NA
-"99","Mr Julian Leeser MP","Berowra, New South Wales","Liberal Party of Australia",NA
-"100","Hon Sussan Ley MP","Farrer, New South Wales","Liberal Party of Australia","sussanley"
-"101","Mrs Nola Marino MP","Forrest, Western Australia","Liberal Party of Australia","NolaMarinoMP"
-"102","Hon Dr John McVeigh MP","Groom, Queensland","Liberal Party of Australia","johnjmcveigh"
-"103","Hon Scott Morrison MP","Cook, New South Wales","Liberal Party of Australia","ScottMorrisonMP"
-"104","Mr Ben Morton MP","Tangney, Western Australia","Liberal Party of Australia",NA
-"105","Mr Ted O'Brien MP","Fairfax, Queensland","Liberal Party of Australia",NA
-"106","Hon Kelly O'Dwyer MP","Higgins, Victoria","Liberal Party of Australia","kellyodwyer"
-"107","Mr Tony Pasin MP","Barker, South Australia","Liberal Party of Australia",NA
-"108","Hon Christian Porter MP","Pearce, Western Australia","Liberal Party of Australia","cporterwa"
-"109","Hon Jane Prentice MP","Ryan, Queensland","Liberal Party of Australia","JanePrentice_MP"
-"110","Hon Melissa Price MP","Durack, Western Australia","Liberal Party of Australia","Melissa4Durack"
-"111","Hon Christopher Pyne MP","Sturt, South Australia","Liberal Party of Australia","CPyne"
-"112","Mr Rowan Ramsey MP","Grey, South Australia","Liberal Party of Australia",NA
-"113","Hon Stuart Robert MP","Fadden, Queensland","Liberal Party of Australia","stuartrobertmp"
-"114","Hon Tony Smith MP","Casey, Victoria","Liberal Party of Australia","TonySmithMP"
-"115","Mrs Ann Sudmalis MP","Gilmore, New South Wales","Liberal Party of Australia",NA
-"116","Hon Michael Sukkar MP","Deakin, Victoria","Liberal Party of Australia",NA
-"117","Hon Angus Taylor MP","Hume, New South Wales","Liberal Party of Australia","angustaylormp"
-"118","Hon Dan Tehan MP","Wannon, Victoria","Liberal Party of Australia","DanTehanWannon"
-"119","Hon Alan Tudge MP","Aston, Victoria","Liberal Party of Australia","AlanTudgeMP"
-"120","Mr Bert van Manen MP","Forde, Queensland","Liberal Party of Australia","bertvanmanen/"
-"121","Mr Ross Vasta MP","Bonner, Queensland","Liberal Party of Australia",NA
-"122","Mr Andrew Wallace MP","Fisher, Queensland","Liberal Party of Australia",NA
-"123","Mrs Lucy Wicks MP","Robertson, New South Wales","Liberal Party of Australia","LucyWicksMP"
-"124","Mr Rick Wilson MP","O'Connor, Western Australia","Liberal Party of Australia",NA
-"125","Mr Tim Wilson MP","Goldstein, Victoria","Liberal Party of Australia","timwilsonmp"
-"126","Mr Jason Wood MP","La Trobe, Victoria","Liberal Party of Australia","JasonWood_MP"
-"127","Hon Ken Wyatt AM, MP","Hasluck, Western Australia","Liberal Party of Australia","KenWyattMP"
-"128","Mr Trent Zimmerman MP","North Sydney, New South Wales","Liberal Party of Australia",NA
-"129","Hon Andrew Broad MP","Mallee, Victoria","The Nationals","broad4mallee"
-"130","Hon Darren Chester MP","Gippsland, Victoria","The Nationals","DarrenChesterMP"
-"131","Mr George Christensen MP","Dawson, Queensland","The Nationals","GChristensenMP"
-"132","Hon Mark Coulton MP","Parkes, New South Wales","The Nationals","MarkCoultonMP"
-"133","Hon Damian Drum MP","Murray, Victoria","The Nationals",NA
-"134","Mr Andrew Gee MP","Calare, New South Wales","The Nationals",NA
-"135","Hon Dr David Gillespie MP","Lyne, New South Wales","The Nationals","DaveGillespieMP"
-"136","Hon Luke Hartsuyker MP","Cowper, New South Wales","The Nationals",NA
-"137","Mr Kevin Hogan MP","Page, New South Wales","The Nationals","KevinHoganMP"
-"138","Hon Barnaby Joyce MP","New England, New South Wales","The Nationals","Barnaby_Joyce"
-"139","Hon Michelle Landry MP","Capricornia, Queensland","The Nationals",NA
-"140","Hon David Littleproud MP","Maranoa, Queensland","The Nationals","D_LittleproudMP"
-"141","Hon Michael McCormack MP","Riverina, New South Wales","The Nationals","M_McCormackMP"
-"142","Mr Llew O'Brien MP","Wide Bay, Queensland","The Nationals",NA
-"143","Mr Ken O'Dowd MP","Flynn, Queensland","The Nationals",NA
-"144","Hon Keith Pitt MP","Hinkler, Queensland","The Nationals",NA
-"145","Mr Adam Bandt MP","Melbourne, Victoria","Australian Greens","adambandt"
-"146","Ms Cathy McGowan AO, MP","Indi, Victoria","Independent","Indigocathy"
-"147","Dr Kerryn Phelps AM, MP","Wentworth, New South Wales","Independent",NA
-"148","Mr Andrew Wilkie MP","Denison, Tasmania","Independent",NA
-"149","Ms Rebekha Sharkie MP","Mayo, South Australia","Centre Alliance","makemayomatter"
-"150","Hon Bob Katter MP","Kennedy, Queensland","Katter's Australian Party","RealBobKatter"
+"","X","name","electorate","party","twitter"
+"1",1,"Hon Anthony Albanese MP","Grayndler, New South Wales","Australian Labor Party","albomp"
+"2",3,"Hon Sharon Bird MP","Cunningham, New South Wales","Australian Labor Party","sharonbirdmp"
+"3",4,"Hon Chris Bowen MP","McMahon, New South Wales","Australian Labor Party","bowenchris"
+"4",6,"Hon Tony Burke MP","Watson, New South Wales","Australian Labor Party","tony_burke"
+"5",7,"Hon Linda Burney MP","Barton, New South Wales","Australian Labor Party","lindaburneymp"
+"6",8,"Hon Mark Butler MP","Port Adelaide, South Australia","Australian Labor Party","mark_butler_mp"
+"7",9,"Ms Terri Butler MP","Griffith, Queensland","Australian Labor Party","terrimbutler"
+"8",10,"Hon Anthony Byrne MP","Holt, Victoria","Australian Labor Party","anthonybyrne_mp"
+"9",11,"Dr Jim Chalmers MP","Rankin, Queensland","Australian Labor Party","jechalmers"
+"10",12,"Mr Nick Champion MP","Wakefield, South Australia","Australian Labor Party","nickchampionmp"
+"11",13,"Ms Lisa Chesters MP","Bendigo, Victoria","Australian Labor Party","lmchesters"
+"12",14,"Hon Jason Clare MP","Blaxland, New South Wales","Australian Labor Party","jasonclaremp"
+"13",15,"Ms Sharon Claydon MP","Newcastle, New South Wales","Australian Labor Party","sharonclaydon"
+"14",16,"Hon Julie Collins MP","Franklin, Tasmania","Australian Labor Party","juliecollinsmp"
+"15",22,"Hon Kate Ellis MP","Adelaide, South Australia","Australian Labor Party","kateellismp"
+"16",23,"Hon Joel Fitzgibbon MP","Hunter, New South Wales","Australian Labor Party","fitzhunter"
+"17",25,"Mr Steve Georganas MP","Hindmarsh, South Australia","Australian Labor Party","stevegeorganas"
+"18",26,"Mr Andrew Giles MP","Scullin, Victoria","Australian Labor Party","andrewjgiles"
+"19",28,"Mr Luke Gosling OAM, MP","Solomon, Northern Territory","Australian Labor Party","lukejgosling"
+"20",29,"Mr Ross Hart MP","Bass, Tasmania","Australian Labor Party","rosshartmp"
+"21",31,"Mr Julian Hill MP","Bruce, Victoria","Australian Labor Party","julianhillmp"
+"22",34,"Mr Stephen Jones MP","Whitlam, New South Wales","Australian Labor Party","stephenjonesalp"
+"23",35,"Ms Ged Kearney MP","Batman, Victoria","Australian Labor Party","gedkearney"
+"24",37,"Hon Dr Mike Kelly AM, MP","Eden-Monaro, New South Wales","Australian Labor Party","mikekellyofem"
+"25",38,"Mr Matt Keogh MP","Burt, Western Australia","Australian Labor Party","mattkeogh"
+"26",39,"Mr Peter Khalil MP","Wills, Victoria","Australian Labor Party","peterkhalilmp"
+"27",40,"Hon Catherine King MP","Ballarat, Victoria","Australian Labor Party","catherinekingmp"
+"28",41,"Ms Madeleine King MP","Brand, Western Australia","Australian Labor Party","madeleinemhking"
+"29",43,"Hon Dr Andrew Leigh MP","Fenner, Australian Capital Territory","Australian Labor Party","aleighmp"
+"30",45,"Hon Richard Marles MP","Corio, Victoria","Australian Labor Party","richardmarlesmp"
+"31",47,"Mr Brian Mitchell MP","Lyons, Tasmania","Australian Labor Party","brianmitchellmp"
+"32",48,"Mr Rob Mitchell MP","McEwen, Victoria","Australian Labor Party","robmitchellmp"
+"33",49,"Hon Shayne Neumann MP","Blair, Queensland","Australian Labor Party","shayneneumannmp"
+"34",51,"Ms Clare O'Neil MP","Hotham, Victoria","Australian Labor Party","clareoneilmp"
+"35",53,"Ms Julie Owens MP","Parramatta, New South Wales","Australian Labor Party","julieowensmp"
+"36",54,"Mr Graham Perrett MP","Moreton, Queensland","Australian Labor Party","grahamperrettmp"
+"37",55,"Hon Tanya Plibersek MP","Sydney, New South Wales","Australian Labor Party","tanya_plibersek"
+"38",56,"Hon Amanda Rishworth MP","Kingston, South Australia","Australian Labor Party","amandarishworth"
+"39",57,"Ms Michelle Rowland MP","Greenway, New South Wales","Australian Labor Party","mrowlandmp"
+"40",58,"Ms Joanne Ryan MP","Lalor, Victoria","Australian Labor Party","joanneryanlalor"
+"41",59,"Hon Bill Shorten MP","Maribyrnong, Victoria","Australian Labor Party","billshortenmp"
+"42",61,"Ms Anne Stanley MP","Werriwa, New South Wales","Australian Labor Party","annewerriwa"
+"43",62,"Hon Wayne Swan MP","Lilley, Queensland","Australian Labor Party","swannyqld"
+"44",64,"Ms Susan Templeman MP","Macquarie, New South Wales","Australian Labor Party","stemplemanmp"
+"45",65,"Hon Matt Thistlethwaite MP","Kingsford Smith, New South Wales","Australian Labor Party","mthistlethwaite"
+"46",66,"Ms Maria Vamvakinou MP","Calwell, Victoria","Australian Labor Party","mariavamvakinou"
+"47",67,"Mr Tim Watts MP","Gellibrand, Victoria","Australian Labor Party","timwattsmp"
+"48",68,"Mr Josh Wilson MP","Fremantle, Western Australia","Australian Labor Party","joshwilsonmp"
+"49",70,"Hon Tony Abbott MP","Warringah, New South Wales","Liberal Party of Australia","tonyabbottmhr"
+"50",71,"Mr John Alexander OAM, MP","Bennelong, New South Wales","Liberal Party of Australia","johnalexandermp"
+"51",72,"Hon Karen Andrews MP","McPherson, Queensland","Liberal Party of Australia","karenandrewsmp"
+"52",73,"Hon Kevin Andrews MP","Menzies, Victoria","Liberal Party of Australia","kevinandrewsmp"
+"53",75,"Hon Julie Bishop MP","Curtin, Western Australia","Liberal Party of Australia","juliebishopmp"
+"54",77,"Hon Scott Buchholz MP","Wright, Queensland","Liberal Party of Australia","scottbuchholzmp"
+"55",78,"Hon Steven Ciobo MP","Moncrieff, Queensland","Liberal Party of Australia","stevenciobo"
+"56",81,"Hon Peter Dutton MP","Dickson, Queensland","Liberal Party of Australia","peterdutton_mp"
+"57",84,"Mr Jason Falinski MP","Mackellar, New South Wales","Liberal Party of Australia","jasonfalinskimp"
+"58",85,"Hon Paul Fletcher MP","Bradfield, New South Wales","Liberal Party of Australia","paulfletchermp"
+"59",86,"Ms Nicolle Flint MP","Boothby, South Australia","Liberal Party of Australia","nicolleflint"
+"60",87,"Hon Josh Frydenberg MP","Kooyong, Victoria","Liberal Party of Australia","joshfrydenberg"
+"61",90,"Hon Alex Hawke MP","Mitchell, New South Wales","Liberal Party of Australia","alexhawkemp"
+"62",91,"Hon Sarah Henderson MP","Corangamite, Victoria","Liberal Party of Australia","shendersonmp"
+"63",93,"Hon Greg Hunt MP","Flinders, Victoria","Liberal Party of Australia","greghuntmp"
+"64",94,"Hon Steve Irons MP","Swan, Western Australia","Liberal Party of Australia","steveironsmp"
+"65",96,"Mr Craig Kelly MP","Hughes, New South Wales","Liberal Party of Australia","craigkellymp"
+"66",97,"Mr Andrew Laming MP","Bowman, Queensland","Liberal Party of Australia","andrewlamingmp"
+"67",100,"Hon Sussan Ley MP","Farrer, New South Wales","Liberal Party of Australia","sussanley"
+"68",101,"Mrs Nola Marino MP","Forrest, Western Australia","Liberal Party of Australia","nolamarinomp"
+"69",102,"Hon Dr John McVeigh MP","Groom, Queensland","Liberal Party of Australia","johnjmcveigh"
+"70",103,"Hon Scott Morrison MP","Cook, New South Wales","Liberal Party of Australia","scottmorrisonmp"
+"71",106,"Hon Kelly O'Dwyer MP","Higgins, Victoria","Liberal Party of Australia","kellyodwyer"
+"72",108,"Hon Christian Porter MP","Pearce, Western Australia","Liberal Party of Australia","cporterwa"
+"73",109,"Hon Jane Prentice MP","Ryan, Queensland","Liberal Party of Australia","janeprentice_mp"
+"74",110,"Hon Melissa Price MP","Durack, Western Australia","Liberal Party of Australia","melissa4durack"
+"75",111,"Hon Christopher Pyne MP","Sturt, South Australia","Liberal Party of Australia","cpyne"
+"76",113,"Hon Stuart Robert MP","Fadden, Queensland","Liberal Party of Australia","stuartrobertmp"
+"77",114,"Hon Tony Smith MP","Casey, Victoria","Liberal Party of Australia","tonysmithmp"
+"78",117,"Hon Angus Taylor MP","Hume, New South Wales","Liberal Party of Australia","angustaylormp"
+"79",118,"Hon Dan Tehan MP","Wannon, Victoria","Liberal Party of Australia","dantehanwannon"
+"80",119,"Hon Alan Tudge MP","Aston, Victoria","Liberal Party of Australia","alantudgemp"
+"81",120,"Mr Bert van Manen MP","Forde, Queensland","Liberal Party of Australia","bertvanmanen"
+"82",123,"Mrs Lucy Wicks MP","Robertson, New South Wales","Liberal Party of Australia","lucywicksmp"
+"83",125,"Mr Tim Wilson MP","Goldstein, Victoria","Liberal Party of Australia","timwilsonmp"
+"84",126,"Mr Jason Wood MP","La Trobe, Victoria","Liberal Party of Australia","jasonwood_mp"
+"85",127,"Hon Ken Wyatt AM, MP","Hasluck, Western Australia","Liberal Party of Australia","kenwyattmp"
+"86",129,"Hon Andrew Broad MP","Mallee, Victoria","The Nationals","broad4mallee"
+"87",130,"Hon Darren Chester MP","Gippsland, Victoria","The Nationals","darrenchestermp"
+"88",131,"Mr George Christensen MP","Dawson, Queensland","The Nationals","gchristensenmp"
+"89",132,"Hon Mark Coulton MP","Parkes, New South Wales","The Nationals","markcoultonmp"
+"90",135,"Hon Dr David Gillespie MP","Lyne, New South Wales","The Nationals","davegillespiemp"
+"91",137,"Mr Kevin Hogan MP","Page, New South Wales","The Nationals","kevinhoganmp"
+"92",138,"Hon Barnaby Joyce MP","New England, New South Wales","The Nationals","barnaby_joyce"
+"93",140,"Hon David Littleproud MP","Maranoa, Queensland","The Nationals","d_littleproudmp"
+"94",141,"Hon Michael McCormack MP","Riverina, New South Wales","The Nationals","m_mccormackmp"
+"95",145,"Mr Adam Bandt MP","Melbourne, Victoria","Australian Greens","adambandt"
+"96",146,"Ms Cathy McGowan AO, MP","Indi, Victoria","Independent","indigocathy"
+"97",149,"Ms Rebekha Sharkie MP","Mayo, South Australia","Centre Alliance","makemayomatter"
+"98",150,"Hon Bob Katter MP","Kennedy, Queensland","Katter's Australian Party","realbobkatter"

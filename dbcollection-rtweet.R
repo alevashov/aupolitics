@@ -7,11 +7,11 @@ library(RMySQL)
 mps <- read.csv('mps.csv')
 #filter out NAs
 
-mps <- mps %>% filter(twitter!="NA") %>% mutate (twitter = )
+mps <- mps %>% filter(twitter!="NA")  
 # remove trailing slash and changing to lower case for consistency
 mps$twitter <- gsub("/", "", mps$twitter)
 mps$twitter <- tolower(mps$twitter)
-class(mps$twitter)
+write.csv(mps, 'mps.csv')
 
 source("api_key.r") #local file with API details, not in global repo for security reasons
 # authorization in twitter
@@ -32,7 +32,6 @@ users <- lookup_users (mps$twitter)
 users <- flatten(users)
 users$screen_name <- tolower(users$screen_name)
 users <- users %>% left_join(mps, by = c("screen_name" = "twitter")) %>% group_by(party)
-# users %>% summarise(followers=sum(followers_count), likes = sum(favourites_count), statuses=sum(statuses_count))
 
 
 # define search function, initial search
