@@ -5,3 +5,4 @@ cacert.pem
 .Rproj.user
 api_key.r
 data-scienc-publish.R
+dbconnectiondetails.R
