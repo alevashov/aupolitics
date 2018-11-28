@@ -18,6 +18,7 @@ tsearch <- function (username, n=25){
 
 
 #setting DB connection
+setwd("~/aupolitics")
 source("dbconnectiondetails.R")
 con <- dbConnect(RMySQL::MySQL(), dbname= db_name, username=user, password=pw, host=host, port=3306)
 # reading users
