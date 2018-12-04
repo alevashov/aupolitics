@@ -48,7 +48,7 @@ total <- con %>% dbSendQuery("SELECT COUNT(status_id) FROM tweets2") %>% dbFetch
 
 for (i in 1:nrow (users)){
         t <- tsearch(users$screen_name[i], 25)
-        t <- flatten(t)
+        t <- rtweet::flatten(t)
         print(i)
         Sys.sleep(3)
         # skip empty results

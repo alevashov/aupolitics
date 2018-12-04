@@ -8,6 +8,7 @@ source("dbconnectiondetails.R")
 con <- dbConnect(RMySQL::MySQL(), dbname= db_name, username=user, password=pw, host=host, port=3306)
 users <- dbReadTable(con, 'users2')
 tweets <- dbReadTable(con, 'tweets2')
+dbDisconnect(con)
 
 
 up <- select(users, one_of(c("user_id", "party")))
