@@ -1,7 +1,8 @@
 # visualization of the data
 library(tidyverse)
 library(rtweet)
-
+library(ggthemes)
+library(RMySQL)
 # setting DB connection and getting users and tweets
 # note it may take a while to load tweets
 source("dbconnectiondetails.R")
@@ -51,4 +52,28 @@ d+geom_bar(position = "dodge", stat="identity")+
                 caption = "\nSource: Data collected from Twitter's REST API via rtweet",
                 fill = "Party\n"
         )
-    
+
+# Twitter clients and devices
+
+clients <- tweets %>% group_by(source=as.factor(source)) %>% summarise(count = n()) %>% 
+        top_n(5, count) %>% arrange(desc(count))
+
+clients %>% ggplot(aes(reorder(source,count),count, fill=source))+
+        geom_col()
+
+# reset join dataframe tweets with party
+up <- select(users, one_of(c("user_id", "party")))
+t <- left_join(tweets, up, by="user_id")
+clients_party <- t %>% group_by(party=as.factor(party), source=as.factor(source)) %>% summarise(count = n()) %>% 
+        arrange(party, desc(count)) %>% filter (party %in% c("Australian Labor Party", "Liberal Party of Australia",
+        "The Nationals")) %>% top_n(5, count) %>% mutate(perc=count/sum(count))
+
+clients_party %>% ggplot(aes(x=party, y=perc*100, fill=reorder(source,count), label = round(perc*100,0)))+
+        geom_col()+
+        labs(y="Percent", fill="Source", title = "Twitter sources/devices")+
+        geom_text(size = 3, position = position_stack(vjust = 0.5))+
+        theme_economist()
+
+
+
+
