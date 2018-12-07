@@ -1,3 +1,5 @@
+## this code isn't much used anymore, alternative developed to store tweets in the database
+
 library(dplyr)
 library(purrr)
 library(twitteR)
