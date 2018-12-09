@@ -13,6 +13,6 @@ Reference to blog post with more detailed explanation of the approach - https://
 ## Data collection to the database on regular basis and futher visualization 
 
 1. tweet-update.R script runnning daily on schedule, collects the data and saves to the database
-2. visualization.R some visualization through R console
+2. visualization.R some visualization - 
 3. AUPolVizual/app.R Shiny R Application with visualization, available publically at https://rserv.levashov.biz/shiny/rstudio/
 
