@@ -12,7 +12,8 @@ Reference to blog post with more detailed explanation of the approach - https://
 
 ## Data collection to the database on regular basis and futher visualization 
 
-1. tweet-update.R script runnning daily on schedule, collects the data and saves to the database
-2. visualization.R some visualization - 
-3. AUPolVizual/app.R Shiny R Application with visualization, available publically at https://rserv.levashov.biz/shiny/rstudio/
+1. dbcollection-rtweet.R initial collection of data (larger number), saving to results to the database
+2. tweet-update.R script is running daily on schedule, collects the data and saves to the database
+3. visualization.R some visualization 
+4. AUPolVizual/app.R Shiny R Application with visualization, available publically at https://rserv.levashov.biz/shiny/rstudio/
 

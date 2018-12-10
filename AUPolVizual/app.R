@@ -36,7 +36,7 @@ ui <- fluidPage(
    # Google Analytics code
    tags$head(includeHTML("ga.html")),
    # Application title
-   titlePanel("Australian Member of Parliament Twitter statistics. Updated daily"),
+   titlePanel("Australian Members of Parliament Twitter statistics. Updated daily"),
    
    # Sidebar with a selector for party
    sidebarLayout(
@@ -54,6 +54,11 @@ ui <- fluidPage(
           tabPanel("Top tweets", DT::dataTableOutput("toptweetsTable"))
         )
       )
+   ),
+   # Footer notes
+   hr(),
+   div(class = "footer",
+       includeHTML("footer.html")
    )
 )
 
