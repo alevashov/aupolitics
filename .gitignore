@@ -7,5 +7,11 @@ api_key.r
 data-scienc-publish.R
 dbconnectiondetails.R
 tweet-update.log
+<<<<<<< HEAD
+*.RData
+awsS3connector.R
+aws-s3-conn.R
+=======
 tweets_app.RData
 tweets.RData
+>>>>>>> 2103062d99555f3a2d2bd70e8e00fed5166adbbc
