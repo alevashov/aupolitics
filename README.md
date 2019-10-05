@@ -10,10 +10,13 @@ Reference to blog post with more detailed explanation of the approach - https://
 2. tweets-collection.R - collecting tweets from MPs
 3. analysis.R - analysis of data
 
-## Data collection to the database on regular basis and futher visualization 
+## Data collection to data file stored at AWS S3 on regular basis and futher visualization 
 
-1. dbcollection-rtweet.R initial collection of data (larger number), saving to results to the database
-2. tweet-update.R script is running daily on schedule, collects the data and saves to the database
+1. dbcollection-rtweet.R initial collection of data (larger number), saving to results to the database (DB was used in past, not anymore)
+2. tweet-update.R script is running daily on schedule, collects the data and saves to the data file on S3
 3. visualization.R some visualization 
 4. AUPolVizual/app.R Shiny R Application with visualization, available publically at https://rserv.levashov.biz/shiny/rstudio/
+
+## Older versions of file working with DB
+Retainer with DB suffix
 
