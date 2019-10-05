@@ -106,7 +106,7 @@ for (i in 1:nrow (users)){
 s3load("journal.RData", bucket = "auspolrappdata")
 
 total_new <- nrow(t) - total
-journal <- data.frame("timestamp"=Sys.time(), "new_entries"=as.numeric(total_new-total))
+journal <- data.frame("timestamp"=Sys.time(), "new_entries"=as.numeric(total_new))
 j <- rbind(j, journal)
 ## save to AWS
 s3save(t, bucket = "auspolrappdata", object = "tweets_app.RData")
