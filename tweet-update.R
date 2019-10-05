@@ -1,7 +1,8 @@
 # updates of tweets for users, to run daily
+# new version saving data to AWS S3 bucket instead of Database
 library(rtweet)
 library(dplyr)
-library(RMySQL)
+library(aws.s3)
 # define search function, update search for new tweets /status updates
 # set n to 25 as reasonable number of tweets expected per day
 tsearch <- function (username, n=25){
@@ -16,13 +17,51 @@ tsearch <- function (username, n=25){
         })
 }
 
+# set function to format tweet search results be compatible with stored data
+tformat <- function (tw_data){
+        tw_fixed <- tw_data %>% mutate (created_at = as.character(created_at), 
+                            is_quote = as.integer(is_quote),
+                            is_retweet = as.integer(is_retweet),
+                            symbols = as.integer(symbols),
+                            urls_url = as.character(urls_url),
+                            urls_expanded_url = as.character(urls_expanded_url),
+                            quoted_created_at = as.character(quoted_created_at),
+                            quoted_verified = as.integer(quoted_verified),
+                            retweet_created_at = as.character(retweet_created_at),
+                            retweet_verified = as.integer(retweet_verified),
+                            protected = as.integer(protected),
+                            account_created_at = as.character(account_created_at),
+                            verified = as.integer(0),
+                            urls_t.co = as.character(urls_t.co),
+                            account_lang= as.character(account_lang))
+                                
+        return(tw_fixed)
+}
 
-#setting DB connection
+# set function to merge nicely tweets found with stored data, updating stored data if it existed
+t_join <- function (t_old, t_new){
+        t_new_dup <- t_new %>% filter(t_new$status_id %in% t_old$status_id)
+        t_new_new <- t_new %>% filter(!(t_new$status_id %in% t_old$status_id))
+        t_old[match(t_new_dup$status_id, t_old$status_id), ] <- t_new_dup
+        t_old <- rbind(t_old, t_new_new)
+        return(t_old)
+}
+
+
+#setting S3  connection, credentials are in env. variale
 setwd("~/aupolitics")
-source("dbconnectiondetails.R")
-con <- dbConnect(RMySQL::MySQL(), dbname= db_name, username=user, password=pw, host=host, port=3306)
+source("awsS3connector.R")
 # reading users
-users <- dbReadTable(con, 'users2')
+s3load("users.RData", bucket = "auspolrappdata")
+
+# get simplified users dataframe for merge with new tweets later
+
+u1 <- users %>% select(user_id, party)
+
+# reading already stored tweets
+s3load("tweets_app.RData", bucket = "auspolrappdata")
+
+
 # checking and creating if needed twitter auth token
 
 token <- tryCatch(get_token(), error= function(e){
@@ -42,26 +81,42 @@ token <- tryCatch(get_token(), error= function(e){
         })
 
 # record number of existing tweets for journal
-total <- con %>% dbSendQuery("SELECT COUNT(status_id) FROM tweets2") %>% dbFetch()
+total <- nrow(t)
 
-# get user timelines and store in DB
+# get user timelines and update dataframe
+
 
 for (i in 1:nrow (users)){
-        t <- tsearch(users$screen_name[i], 25)
-        t <- rtweet::flatten(t)
+        t1 <- tsearch(users$screen_name[i], 25)
+        if (nrow(t1)<1) next
+        t1 <- rtweet::flatten(t1)
+        t1 <- left_join(t1, u1, by="user_id")
+        t1 <- tformat(t1)
         print(i)
         Sys.sleep(3)
         # skip empty results
-        if (length(t)!=0){
-                dbWriteTable(con, "tweets2", t, row.names=FALSE, append=TRUE)        
+        if (length(t1)!=0){
+                t <- t_join(t, t1)
         }
 }
-# record number of added tweets and write to DB
+# record number of added tweets and write files to s3 bucket
 
-total_new <- con %>% dbSendQuery("SELECT COUNT(status_id) FROM tweets2") %>% dbFetch()  
+# loading journal 
+
+s3load("journal.RData", bucket = "auspolrappdata")
+
+total_new <- nrow(t) - total
 journal <- data.frame("timestamp"=Sys.time(), "new_entries"=as.numeric(total_new-total))
-dbWriteTable(con, "journal", journal, row.names=FALSE, append=TRUE) 
+j <- rbind(j, journal)
+## save to AWS
+s3save(t, bucket = "auspolrappdata", object = "tweets_app.RData")
+s3save(j, bucket = "auspolrappdata", object = "journal.RData") 
 
-# closing DB connection
-dbDisconnect(con)
+# save local copy
+
+save(t, file="tweets_app.RData")
+
+
+
+
 

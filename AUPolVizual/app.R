@@ -25,7 +25,7 @@ dbDisconnect(con)
 load("tweets_app.RData")
 max_local <- as.numeric(max(t$status_id))
 con <- dbConnect(RMySQL::MySQL(), dbname= db_name, username=user, password=pw, host=host, port=3306)
-max_db <- con %>% dbSendQuery("SELECT MAX(status_id) FROM twitterr.tweets_party;") %>% dbFetch()
+max_db <- con %>% dbGetQuery("SELECT MAX(CONVERT(status_id, UNSIGNED)) FROM twitterr.tweets_party")  
 dbDisconnect(con)
 max_db <- as.numeric(max_db[1])
 if (max_local < max_db) updateDb()
@@ -36,13 +36,15 @@ ui <- fluidPage(
    # Google Analytics code
    tags$head(includeHTML("ga.html")),
    # Application title
-   titlePanel("Australian Member of Parliament Twitter statistics. Updated daily"),
+   titlePanel("Australian Members of Parliament Twitter statistics. Updated daily"),
    
    # Sidebar with a selector for party
    sidebarLayout(
       sidebarPanel(
-         selectInput("party", "Party:",
-                      c("Australian Labor Party", "Liberal Party of Australia", "The Nationals")),
+         selectInput("party", "Select party(s), use 'Backspace' key to delete",
+                      c("Australian Labor Party", "Liberal Party of Australia", "The Nationals"),
+                     selected=c("Australian Labor Party", "Liberal Party of Australia", "The Nationals"), 
+                     selectize = TRUE, multiple = TRUE),
          dateInput("start_date", "Start date:", value=today()-30, min=today()-90, max=today()-1)
       ),
       
@@ -51,19 +53,38 @@ ui <- fluidPage(
         tabsetPanel(
           tabPanel("Devices",plotOutput("devPlot")),
           tabPanel("Timeline", plotOutput("timePlot")),
-          tabPanel("Top tweets", DT::dataTableOutput("toptweetsTable"))
+          tabPanel("Top tweets",
+                   # Scatterplot
+                   plotOutput(outputId = "tweetsPlot", brush = "plot_brush"),
+                   tags$br(),
+                   # Show data table
+                   dataTableOutput(outputId = "tweetsTable")
+                   ),
+          tabPanel("Top tweets table", DT::dataTableOutput("toptweetsTable"))
         )
       )
+   ),
+   # Footer notes
+   hr(),
+   div(class = "footer",
+       includeHTML("footer.html")
    )
 )
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
-   
+  
+  # reactive function to update data frame based on partie(s) and date
+  t1 <- reactive({
+    req(input$party, input$start_date) # ensure input$ vars available
+    filter(t, as.Date(created_at)>as.Date(input$start_date)) %>% filter(party %in% input$party)
+    })
+  
+  #tab 1 plot  
    output$devPlot <- renderPlot({
       # generate col chart for devices used per party based on input$party from ui.R
-           t1 <- t %>% filter(as.Date(created_at)>as.Date(input$start_date))
-           clients <- t1 %>% filter(party==input$party) %>% group_by(source=as.factor(source)) %>% 
+           
+           clients <- t1() %>% group_by(source=as.factor(source)) %>% 
                    summarise(count = n()) %>% 
                    top_n(5, count) %>% arrange(desc(count)) 
            # draw the col chart
@@ -77,9 +98,8 @@ server <- function(input, output) {
    })
    output$timePlot <- renderPlot({
      # status updates by party since date selected
-     t1 <- t %>% filter(as.Date(created_at)>as.Date(input$start_date))
-     t_p <- t1 %>% filter(party==input$party)
-     ts_plot(t_p, by = "1 day", trim=1, tz="Australia/Sydney") +
+     
+     ts_plot(t1(), by = "1 day", trim=1, tz="Australia/Sydney") +
        ggplot2::theme_light() +
        ggplot2::theme(plot.title = ggplot2::element_text(face = "bold")) +
        ggplot2::labs(
@@ -91,16 +111,50 @@ server <- function(input, output) {
        theme_economist()
      
    })
+   
+   output$tweetsPlot <- renderPlot({
+     # get likes vs retweets, original only 
+     t2 <- t1() %>% ungroup() %>%
+       filter (is.na(retweet_status_id)) %>% plain_tweets() %>%
+       mutate (link=paste0('<a href=', status_url, ' target="_blank" >On Twitter</a>')) %>%
+       select (text, screen_name, retweets=retweet_count, likes=favorite_count, link, party)   
+     
+     # draw scatterplot
+     ggplot(t2, aes_string(x = t2$likes, y = t2$retweets)) +
+       geom_point(aes(color=party), size=3)+
+       ggplot2::theme_light() +
+       ggplot2::theme(plot.title = ggplot2::element_text(face = "bold")) +
+       scale_x_log10()+
+       scale_y_log10()+
+       ggplot2::labs(
+         x = 'Likes', y = 'Retweets',
+         title = "Likes vs retweets",
+         caption = "\nSource: Data collected from Twitter's REST API via rtweet"
+       )+
+       theme_economist()
+   })
+      # Create data table
+      output$tweetsTable <- renderDataTable({
+        
+        t2 <- t1() %>% ungroup() %>%
+        filter (is.na(retweet_status_id)) %>% plain_tweets() %>%
+        mutate (link=paste0('<a href=', status_url, ' target="_blank" >On Twitter</a>')) %>%
+        select (text, screen_name, retweets=retweet_count, likes=favorite_count, link, party)    
+        b <- brushedPoints(t2, brush = input$plot_brush, xvar="likes", yvar="retweets") %>%
+        select(text, screen_name, party, likes, retweets, link)  
+        print (b)
+     
+   })
+   
    output$toptweetsTable <- DT::renderDataTable({
      # find top 200 tweets for the party over given period of time
       
-       t1 <- t %>% filter(as.Date(created_at)>as.Date(input$start_date)) %>%
-       filter(party==input$party) %>% ungroup() %>%
+       t2 <- t1() %>% ungroup() %>%
        filter (is.na(retweet_status_id)) %>% plain_tweets() %>%
        mutate (link=paste0('<a href=', status_url, ' target="_blank" >On Twitter</a>')) %>%
        select (text, screen_name, retweets=retweet_count, likes=favorite_count, link, party) %>%
        top_n (200, likes+retweets) %>% arrange(likes) 
-       DT::datatable(t1, escape = FALSE, 
+       DT::datatable(t2, escape = FALSE, 
                      options = list(order = list(list(4, 'desc'), list(3, 'desc')))
                      )
    })
