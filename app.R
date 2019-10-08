@@ -59,6 +59,13 @@ ui <- fluidPage(
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
+   
+   
+   # Cross-session reactive file reader. 
+   fileData <- reactiveFileReader(1000, NULL, 'tweets_app.RData', load)
+   
+   
+   ## End(Not run)
   
   # reactive function to update data frame based on partie(s) and date
   t1 <- reactive({

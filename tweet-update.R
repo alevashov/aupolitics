@@ -50,7 +50,7 @@ t_join <- function (t_old, t_new){
 
 #setting S3  connection, credentials are in env. variale
 setwd("~/aupolitics")
-source("awsS3connector.R")
+source("aws-s3-conn.R")
 # reading users
 s3load("users.RData", bucket = "auspolrappdata")
 
